@@ -10,6 +10,8 @@ class List extends Component {
   componentDidMount() {
     this.setState({ loading: true });
 
+    // This setTimeout exists to show the loading indicator, please do
+    // not remove it as part of this test.
     setTimeout(() => {
       // TODO: Use async/await.
       fetch(API_URL)
@@ -30,12 +32,12 @@ class List extends Component {
     } else if (articles === null) {
       return null;
     }
-    // TODO: Need to add a case for handling an empty articles list.
+    // TODO: Add a case for handling an empty articles list.
 
     return (
       <main>
         <h1>Articles list:</h1>
-        {/* TODO: Limit to 10 and order the articles alphabetically. */}
+        {/* TODO: Limit to the first 10 and order the articles alphabetically. */}
         {articles.map(article => (
           <Article
             key={article.id}
