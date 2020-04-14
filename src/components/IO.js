@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-// TODO: Make it fixed.
+// TODO: Fix this container to the top of the page, so that when a user scrolls, it remains at the top.
 const Container = styled.div``;
 
 class IO extends Component {
