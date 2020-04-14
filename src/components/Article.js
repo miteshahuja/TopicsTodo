@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// TODO: Follow the Semantic HTML standard
+// TODO: There is an issue in this file regarding the Semantic HTML standard, please correct it.
 const Container = styled.div`
   cursor: pointer;
 `;
