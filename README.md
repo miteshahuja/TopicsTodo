@@ -25,19 +25,20 @@ dev sever will then open your browser to http://localhost:3000/
 
 All the test instructions below are displayed in the files as well except Task 4, here are the lists for summary:
 
-### Task 1: Article.js
-1. Follow the Semantic HTML standard
-
 ### Task 2: IO.js
 1. Make it fixed.
 2. Listen to window mousemove and window resize.
 3. Remove listeners.
 
 ### TASK 3: List.js
-1. Refactor to Function Component & Hooks.
-2. Use async/await.
-3. Need to add a case for handling an empty articles list.
-4. Limit to 10 and order the articles alphabetically.
+1. Use async/await.
+2. Need to add a case for handling an empty articles list.
+3. Limit to 10 and order the articles alphabetically.
+4. Expand an article when clicked on
+
+### Task 1: Article.js
+1. Follow the Semantic HTML standard
+2. Download comments for the article
 
 ### Task 4
 1. How would you improve this codebase?
