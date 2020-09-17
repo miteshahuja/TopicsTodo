@@ -34,7 +34,6 @@ All the test instructions below are displayed in the files as well except Task 4
 1. Use async/await.
 2. Need to add a case for handling an empty articles list.
 3. Limit to 10 and order the articles alphabetically.
-4. Expand an article when clicked on
 
 ### Task 1: Article.js
 1. Follow the Semantic HTML standard
