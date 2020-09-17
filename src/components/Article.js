@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 // TODO: Show comments for the article
 // const COMMENTS_URL = `https://jsonplaceholder.typicode.com/posts/${postId}/comments`
@@ -8,7 +8,6 @@ import styled from 'styled-components';
 const Container = styled.div`
   cursor: pointer;
 `;
-
 
 function Article(props) {
   const { title, body, isSelected } = props;

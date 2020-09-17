@@ -11,7 +11,7 @@ const IO = () => {
   });
 
   const getMousePosition = (e) =>
-    setState((s) => ({
+    setState((state) => ({
       ...state,
       mouse: {
         x: e.clientX,
