@@ -1,54 +1,50 @@
-import React, { Component } from 'react';
-import Article from './Article';
+import React, { useState } from "react";
+import Article from "./Article";
 
-const API_URL = 'https://jsonplaceholder.typicode.com/posts';
+const API_URL = "https://jsonplaceholder.typicode.com/posts";
 
-// TODO: Refactor to Function Component & Hooks.
-class List extends Component {
-  state = { articles: null, loading: false, selected: -1 };
+const List = () => {
+  const [state, setState] = useState({
+    articles: null,
+    loading: true,
+    selected: -1,
+  });
 
-  componentDidMount() {
-    this.setState({ loading: true });
-
-    // This setTimeout exists to show the loading indicator, please do
-    // not remove it as part of this test.
+  React.useEffect(() => {
     setTimeout(() => {
       // TODO: Use async/await.
       fetch(API_URL)
-        .then(res => res.json())
-        .then(this.hydrate);
+        .then((res) => res.json())
+        .then((articles) =>
+          setState((state) => ({ ...state, articles, loading: false }))
+        );
     }, 2000);
+  }, []);
+
+  const handleClick = (id) => setState((state) => ({ ...state, selected: id }));
+
+  const { articles, loading, selected } = state;
+
+  if (loading === true) {
+    return <p>Loading...</p>;
+  } else if (articles === null) {
+    return null;
   }
-
-  hydrate = data => this.setState({ articles: data, loading: false });
-
-  handleClick = id => this.setState({ selected: id });
-
-  render() {
-    const { articles, loading, selected } = this.state;
-
-    if (loading === true) {
-      return <p>Loading...</p>;
-    } else if (articles === null) {
-      return null;
-    }
-    // TODO: Add a case for handling an empty articles list.
-
-    return (
-      <main>
-        <h1>Articles list:</h1>
-        {/* TODO: Limit to the first 10 and order the articles alphabetically. */}
-        {articles.map(article => (
-          <Article
-            key={article.id}
-            {...article}
-            isSelected={article.id === selected}
-            onClick={this.handleClick}
-          />
-        ))}
-      </main>
-    );
-  }
-}
+  // TODO: Add a case for handling an empty articles list.
+  return (
+    <main>
+      <h1>Articles list:</h1>
+      {/* TODO: Limit to the first 10 and order the articles alphabetically. */}
+      {articles.map((article) => (
+        <Article
+          key={article.id}
+          {...article}
+          isSelected={article.id === selected}
+          onClick={handleClick}
+        />
+      ))}
+    </main>
+  );
+};
 
 export default List;
